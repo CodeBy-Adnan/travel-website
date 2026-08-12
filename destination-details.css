@@ -359,3 +359,58 @@ font-size:32px;
 }
 
 
+/* =================================
+   DESTINATION MOBILE SCROLL FIX
+================================= */
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: auto;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Keep destination navbar visible */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+nav {
+    position: relative;
+    z-index: 100000;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    header {
+        position: absolute;
+    }
+
+    nav {
+        width: 90%;
+        min-height: 70px;
+        padding: 18px 0;
+    }
+
+    .hero {
+        min-height: 100dvh;
+        height: auto;
+    }
+
+    .hero-content {
+        z-index: 5;
+    }
+
+}
