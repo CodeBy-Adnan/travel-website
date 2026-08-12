@@ -1316,3 +1316,75 @@ footer{
     }
 
 }
+
+
+
+/* =================================
+   MOBILE NAV + SCROLL FIX
+================================= */
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: auto;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Keep navbar properly visible */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 70px;
+    z-index: 99999;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+
+    nav {
+        padding: 18px 5%;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 70px);
+
+        overflow-y: auto;
+
+        background: rgba(7, 17, 31, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 35px 25px;
+
+        transition: right .35s ease;
+
+        z-index: 99998;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .menu-btn {
+        position: relative;
+        z-index: 100000;
+        display: block;
+    }
+
+}
